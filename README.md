@@ -8,9 +8,9 @@ This paper introduces MambaStereo, a novel stereo matching network that leverage
 
 ![image](image/net.png)
 
-# How to use
+## How to use
 
-## Environment
+### Environment
 The code is tested on:
 * Python 3.9
 * Pytorch 2.2.0
@@ -44,14 +44,14 @@ pip install matplotlib
 ## Data Preparation
 Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html), [KITTI 2012](http://www.cvlibs.net/datasets/kitti/eval_stereo_flow.php?benchmark=stereo), [KITTI 2015](http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo)
 
-## Train
+### Train
 Set a variable for the dataset directory, e.g. DATAPATH="/datasets/sceneflow/". The args are detailed in the paper Then, run train.py as below.
 The args in both cases can be set differently depending on the model and datasets.
 ```
 python main.py --datasets sceneflow --datapath DATAPATH --trainlist ./filenames/xx.txt --testlist ./filenames/xx.txt 
 ```
 
-## Finetuning on KITTI
+### Finetuning on KITTI
 Use the following command to train MambaStereo on KITTI2015&2012.
 
 ```
@@ -68,7 +68,7 @@ Use the following command to train MambaStereo on KITTI2012.
 python main.py --datasets kitti  --datapath DATAPATH --trainlist ./filenames/xx.txt --testlist ./filenames/xx.txt --loadckpt ckpts/xx.ckpt
 ```
 
-## Test
+### Test
 Load the weight and the file path,you can get the output images
 ```
 python prediction.py
@@ -76,7 +76,7 @@ python prediction.py
 
 
 
-### Pretrained Model
+## Pretrained Model
 
 [Scene Flow](https://drive.google.com/file/d/1uipxPgePS8pjk0F-xW0y4iLDkl8Fv39i/view?usp=drive_link)
 

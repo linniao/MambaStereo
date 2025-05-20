@@ -1,5 +1,5 @@
 
-# MambaStereo 
+# MambaStereo （The The Visual Computer）
 This is the implementation of the paper: "MambaStereo: Enhancing Stereo Matching Accuracy in Ill-Posed Regions via Mamba-Based Cost Volume Construction"
 
 ## Introduction

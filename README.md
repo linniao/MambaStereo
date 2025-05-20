@@ -48,24 +48,24 @@ Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/
 Set a variable for the dataset directory, e.g. DATAPATH="/datasets/sceneflow/". The args are detailed in the paper Then, run train.py as below.
 The args in both cases can be set differently depending on the model and datasets.
 ```
-python main.py --datasets sceneflow 
+python main.py --datasets sceneflow --datapath DATAPATH --trainlist ./filenames/xx.txt --testlist ./filenames/xx.txt 
 ```
 
 ## Finetuning on KITTI
 Use the following command to train MambaStereo on KITTI2015&2012.
 
 ```
-python main.py 
+python main.py --datasets kitti --datapath DATAPATH --trainlist ./filenames/xx.txt --testlist ./filenames/xx.txt --loadckpt ckpts/xx.ckpt 
 ```
 Use the following command to train MambaStereo on KITTI2015.
 
 ```
-python main.py 
+python main.py --datasets kitti --datapath DATAPATH --trainlist ./filenames/xx.txt --testlist ./filenames/xx.txt --loadckpt ckpts/xx.ckpt
 ```
 Use the following command to train MambaStereo on KITTI2012.
 
 ```
-python main.py 
+python main.py --datasets kitti  --datapath DATAPATH --trainlist ./filenames/xx.txt --testlist ./filenames/xx.txt --loadckpt ckpts/xx.ckpt
 ```
 
 ## Test

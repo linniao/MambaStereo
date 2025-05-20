@@ -4,7 +4,7 @@ This is the implementation of the paper: "MambaStereo: Enhancing Stereo Matching
 
 ## Introduction
 
-
+This paper introduces MambaStereo, a novel stereo matching network that leverages the Mamba model to construct a cost volume, enhancing correlation information between long-range pixels in ill-posed regions. To mitigate the limitations of Mamba's local receptive field, we propose a Channel and Local Enhancement Module (CLEM) that integrates contextual information. Additionally, we replace some 3D convolutions in the aggregation network with partial convolutions, reducing computational cost while maintaining accuracy. A disparity refinement scheme based on feature error and dilation convolutions further enhances prediction accuracy. 
 
 ![image](image/net.png)
 
@@ -45,18 +45,29 @@ pip install matplotlib
 Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html), [KITTI 2012](http://www.cvlibs.net/datasets/kitti/eval_stereo_flow.php?benchmark=stereo), [KITTI 2015](http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo)
 
 ## Train
-Use the following command to train MambaStereo on Scene Flow
-The args are detailed in the paper
+Set a variable for the dataset directory, e.g. DATAPATH="/datasets/sceneflow/". The args are detailed in the paper Then, run train.py as below.
+The args in both cases can be set differently depending on the model and datasets.
 ```
-python main.py
+python main.py --datasets sceneflow 
 ```
 
 ## Finetuning on KITTI
-Use the following command to train MambaStereo on Scene Flow
-The args are detailed in the paper
+Use the following command to train MambaStereo on KITTI2015&2012.
+
 ```
-python main.py
+python main.py 
 ```
+Use the following command to train MambaStereo on KITTI2015.
+
+```
+python main.py 
+```
+Use the following command to train MambaStereo on KITTI2012.
+
+```
+python main.py 
+```
+
 ## Test
 Load the weight and the file path,you can get the output images
 ```
